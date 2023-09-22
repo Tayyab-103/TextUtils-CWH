@@ -1,0 +1,7 @@
+.accordion-button::after{
+  filter: invert(1);
+}
+
+.active:hover{
+cursor: pointer;
+}

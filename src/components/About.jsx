@@ -37,11 +37,11 @@ export default function About(props) {
       style={{ color: props.mode === "dark" ? "white" : "#042743" }}
     >
       <h1 className="my-3">About Us</h1>
-      <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
+      <div className="accordion accordion-flush" id="accordionFlushExample">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingOne">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseOne"
@@ -54,21 +54,21 @@ export default function About(props) {
           </h2>
           <div
             id="flush-collapseOne"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="flush-headingOne"
             data-bs-parent="#accordionFlushExample"
           >
-            <div class="accordion-body" style={myStyle}>
+            <div className="accordion-body" style={myStyle}>
               TextUtils gives you a way to analyze to your text quickly and
               efficiently. Be it word count, character count. Thus, it is
               suitable for writing text with word or character limit.
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingTwo">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingTwo">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseTwo"
@@ -81,11 +81,11 @@ export default function About(props) {
           </h2>
           <div
             id="flush-collapseTwo"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="flush-headingTwo"
             data-bs-parent="#accordionFlushExample"
           >
-            <div class="accordion-body" style={myStyle}>
+            <div className="accordion-body" style={myStyle}>
               Textutils is a free character counter tool that provides instant
               character count & word count statics for a given text. Textutils
               reports the number of words and characters. Thus it is suitable
@@ -93,10 +93,10 @@ export default function About(props) {
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingThree">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingThree">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseThree"
@@ -109,11 +109,11 @@ export default function About(props) {
           </h2>
           <div
             id="flush-collapseThree"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="flush-headingThree"
             data-bs-parent="#accordionFlushExample"
           >
-            <div class="accordion-body" style={myStyle}>
+            <div className="accordion-body" style={myStyle}>
               Utilities for handling character vectors that store human-readable
               text (either plain or with markup, such as HTML or LaTeX). The
               package provides, in particular, functions that help with the
@@ -124,7 +124,7 @@ export default function About(props) {
         </div>
       </div>
       {/* <div className="container my-3">
-        <button onClick={toggleStyle} type="button" class="btn btn-primary">
+        <button onClick={toggleStyle} type="button" className="btn btn-primary">
           {btntext}
         </button>
       </div> */}

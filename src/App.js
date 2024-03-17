@@ -27,7 +27,7 @@ function App() {
       showAlert("Dark mode has been enabled", "success");
 
       // Favicon Title Changed
-      // document.title = "TextUtils - Dark Mode";
+      document.title = "TextUtils - Dark Mode";
 
       // setTimeout(() => {
       //   document.title = "TextUtils is Amazing Mode";
@@ -54,7 +54,9 @@ function App() {
           mode={mode}
           toggleMode={toggleMode}
         />
-        <Alert alert={alert} />
+        <div className="container my-5">
+          <Alert alert={alert} />
+        </div>
         <div className="container my-3">
           <Routes>
             <Route path="/about" element={<About mode={mode} />} />
@@ -63,7 +65,7 @@ function App() {
               element={
                 <TextForm
                   showAlert={showAlert}
-                  heading="Try TextUtils - Word Counter, Character Counter, Remove extra Spaces"
+                  heading="Please input the text for analysis below"
                   mode={mode}
                 />
               }

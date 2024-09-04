@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   const [mode, setMode] = useState("light"); // whether dark mode or not
@@ -54,6 +55,7 @@ function App() {
           mode={mode}
           toggleMode={toggleMode}
         />
+
         <div className="container my-5">
           <Alert alert={alert} />
         </div>
@@ -65,12 +67,17 @@ function App() {
               element={
                 <TextForm
                   showAlert={showAlert}
-                  heading="Please input the text for analysis below"
+                  heading="Enter the text you'd like to review and analyze"
                   mode={mode}
                 />
               }
             />
           </Routes>
+        </div>
+
+        <div className=" my-5">
+
+        <Footer />
         </div>
       </Router>
     </>

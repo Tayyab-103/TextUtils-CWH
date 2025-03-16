@@ -49,35 +49,34 @@ function App() {
       {/* <Navbar tilte = "TextUtils" aboutText = "About Us" /> */}
 
       <Router>
-        <Navbar
-          title="TextUtils"
-          aboutText="About Us"
-          mode={mode}
-          toggleMode={toggleMode}
-        />
-
-        <div className="container my-5">
-          <Alert alert={alert} />
-        </div>
-        <div className="container my-3">
-          <Routes>
-            <Route path="/about" element={<About mode={mode} />} />
-            <Route
-              path="/"
-              element={
-                <TextForm
-                  showAlert={showAlert}
-                  heading="Enter the text you'd like to review and analyze"
-                  mode={mode}
-                />
-              }
-            />
-          </Routes>
-        </div>
-
-        <div className=" my-5">
-
-        <Footer />
+        <div className="d-flex flex-column min-vh-100">
+          {" "}
+          {/* Main Wrapper */}
+          <Navbar
+            title="TextUtils"
+            aboutText="About Us"
+            mode={mode}
+            toggleMode={toggleMode}
+          />
+          <div className="container my-5 flex-grow-1">
+            {" "}
+            {/* Content will grow */}
+            <Alert alert={alert} />
+            <Routes>
+              <Route path="/about" element={<About mode={mode} />} />
+              <Route
+                path="/"
+                element={
+                  <TextForm
+                    showAlert={showAlert}
+                    heading="Enter the text you'd like to review and analyze"
+                    mode={mode}
+                  />
+                }
+              />
+            </Routes>
+          </div>
+          <Footer mode={mode} />
         </div>
       </Router>
     </>

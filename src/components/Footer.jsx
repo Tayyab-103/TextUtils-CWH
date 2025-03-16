@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-const Footer = () => {
+const Footer = ({ mode }) => {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
 
@@ -23,7 +23,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-dark text-white py-5">
+    <footer
+      className={`pt-5 pb-3 text-${
+        mode === "light" ? "dark" : "white"
+      } bg-${mode}`}
+    >
       <div className="container">
         <div className="row">
           <div className="col-md-3 mb-4">
@@ -33,59 +37,19 @@ const Footer = () => {
           <div className="col-md-3 mb-4">
             <h3 className="h6 font-weight-bold">Quick Links</h3>
             <ul className="list-unstyled">
-              <li>
-                <a href="/" className="text-white-50 text-decoration-none">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="/" className="text-white-50 text-decoration-none">
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a href="/" className="text-white-50 text-decoration-none">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="/" className="text-white-50 text-decoration-none">
-                  Privacy Policy
-                </a>
-              </li>
+              <li><a href="#" className={`text-${mode === "light" ? "dark" : "white"} text-decoration-none`}>About Us</a></li>
+              <li><a href="#" className={`text-${mode === "light" ? "dark" : "white"} text-decoration-none`}>Contact Us</a></li>
+              <li><a href="#" className={`text-${mode === "light" ? "dark" : "white"} text-decoration-none`}>Terms of Service</a></li>
+              <li><a href="#" className={`text-${mode === "light" ? "dark" : "white"} text-decoration-none`}>Privacy Policy</a></li>
             </ul>
           </div>
           <div className="col-md-3 mb-4">
             <h3 className="h6 font-weight-bold">Follow Us</h3>
             <div>
-              <a
-                href="/"
-                aria-label="Facebook"
-                className="text-white-50 me-3"
-              >
-                <FaFacebook size={24} />
-              </a>
-              <a
-                href="/"
-                aria-label="Twitter"
-                className="text-white-50 me-3"
-              >
-                <FaTwitter size={24} />
-              </a>
-              <a
-                href="/"
-                aria-label="Instagram"
-                className="text-white-50 me-3"
-              >
-                <FaInstagram size={24} />
-              </a>
-              <a
-                href="/"
-                aria-label="LinkedIn"
-                className="text-white-50"
-              >
-                <FaLinkedin size={24} />
-              </a>
+              <a href="#" className={`me-3 text-${mode === "light" ? "dark" : "white"}`}><FaFacebook size={24} /></a>
+              <a href="#" className={`me-3 text-${mode === "light" ? "dark" : "white"}`}><FaTwitter size={24} /></a>
+              <a href="#" className={`me-3 text-${mode === "light" ? "dark" : "white"}`}><FaInstagram size={24} /></a>
+              <a href="#" className={`text-${mode === "light" ? "dark" : "white"}`}><FaLinkedin size={24} /></a>
             </div>
           </div>
           <div className="col-md-3 mb-4">
@@ -96,16 +60,9 @@ const Footer = () => {
                 placeholder="Enter your email"
                 value={email}
                 onChange={handleEmailChange}
-                className={`form-control ${
-                  !isValidEmail ? "is-invalid" : ""
-                }`}
-                aria-label="Email for newsletter"
+                className={`form-control ${!isValidEmail ? "is-invalid" : ""}`}
               />
-              <button
-                type="submit"
-                className="btn btn-primary ms-2"
-                aria-label="Subscribe"
-              >
+              <button type="submit" className="btn btn-primary ms-2">
                 <MdEmail size={24} />
               </button>
             </form>
@@ -116,7 +73,7 @@ const Footer = () => {
             )}
           </div>
         </div>
-        <div className="border-top border-secondary mt-4 pt-4 text-center">
+        <div className={`border-top mt-2 pt-2 text-center border-${mode === "light" ? "dark" : "light"}`}>
           <p>&copy; {new Date().getFullYear()} TextUtils. All rights reserved.</p>
         </div>
       </div>
